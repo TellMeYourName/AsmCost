@@ -46,6 +46,10 @@ Aop之asm切面编程，计算方法耗时插件。
     11-15 03:06:57.531 2084-2084/com.xyzlf.asm I/System.out: show cost 8085 microsecond
     11-15 03:06:57.532 2084-2084/com.xyzlf.asm I/System.out: ======== show end ========
 
+# 参考资料
+
+Asm的学习及实践，参考这篇文章：<https://www.diycode.cc/topics/786>，感谢大神的无私分享。
+
 # 关于我
 
 有任何使用问题，可以给我发邮件：
