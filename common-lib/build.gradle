@@ -1,0 +1,41 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+apply plugin: 'com.novoda.bintray-release'//添加上传到jcenter仓库用到的插件
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+//sourceCompatibility = "1.7"
+//targetCompatibility = "1.7"
+
+group='com.xyzlf.asm'
+version='0.0.1'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repo'))
+//        mavenLocal()
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+String localBintrayUser = properties.getProperty("bintray.user")
+String localBintrayApikey = properties.getProperty("bintray.apikey")
+
+//推送指令
+//gradlew clean build bintrayUpload
+//添加
+publish {
+    bintrayUser = localBintrayUser   //bintray.com用户名
+    bintrayKey = localBintrayApikey  //bintray.com apikey
+    dryRun = false
+    userOrg = localBintrayUser
+    groupId = 'com.'+ localBintrayUser +'.asm'//jcenter上的路径
+    artifactId = 'common-lib'//项目名称
+    publishVersion = '0.0.1'//版本号
+    desc = '计算方法耗时的一个插件'
+    website = 'https://github.com/xyzlf/AsmCost'
+}
