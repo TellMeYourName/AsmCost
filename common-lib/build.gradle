@@ -10,7 +10,7 @@ dependencies {
 //targetCompatibility = "1.7"
 
 group='com.xyzlf.asm'
-version='0.0.1'
+version='0.0.2'
 
 uploadArchives {
     repositories.mavenDeployer {
@@ -26,7 +26,7 @@ String localBintrayUser = properties.getProperty("bintray.user")
 String localBintrayApikey = properties.getProperty("bintray.apikey")
 
 //推送指令
-//gradlew clean build bintrayUpload
+//./gradlew clean build bintrayUpload
 //添加
 publish {
     bintrayUser = localBintrayUser   //bintray.com用户名
@@ -35,7 +35,7 @@ publish {
     userOrg = localBintrayUser
     groupId = 'com.'+ localBintrayUser +'.asm'//jcenter上的路径
     artifactId = 'common-lib'//项目名称
-    publishVersion = '0.0.1'//版本号
+    publishVersion = '0.0.2'//版本号
     desc = '计算方法耗时的一个插件'
     website = 'https://github.com/xyzlf/AsmCost'
 }

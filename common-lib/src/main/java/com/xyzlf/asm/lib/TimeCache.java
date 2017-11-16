@@ -19,7 +19,7 @@ public class TimeCache {
     public static String getCostTime(String methodName) {
         long start = sStartTime.get(methodName);
         long end = sEndTime.get(methodName);
-        return methodName + " cost " + ((end - start) / 1000) + " microsecond";
+        return "[cost] " + methodName + " cost " + ((end - start) / 1000) + " microsecond";
     }
 
     public static void clear() {

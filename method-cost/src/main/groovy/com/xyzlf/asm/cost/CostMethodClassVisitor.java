@@ -42,7 +42,7 @@ public class CostMethodClassVisitor extends ClassVisitor {
                 //super.onMethodEnter();
                 if(isInject()){
                     mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
-                    mv.visitLdcInsn("======== "+ name +" start ========");
+                    mv.visitLdcInsn("[cost] ======== "+ name +" start ========");
                     mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println",
                             "(Ljava/lang/String;)V", false);
 
@@ -70,7 +70,7 @@ public class CostMethodClassVisitor extends ClassVisitor {
                             "(Ljava/lang/String;)V", false);
 
                     mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
-                    mv.visitLdcInsn("======== "+ name +" end ========");
+                    mv.visitLdcInsn("[cost] ======== "+ name +" end ========");
                     mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println",
                             "(Ljava/lang/String;)V", false);
                 }
